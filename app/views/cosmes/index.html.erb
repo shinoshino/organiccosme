@@ -1,3 +1,7 @@
-<% @cosmes.each do |cosme| %>
-  <%= cosme.name %>
-<% end %>
+<div class="contents">
+  <% @cosmes.each do |cosme| %>
+    <div class="contents contents_font">
+      <p><%= cosme.name %></p>
+    </div>
+  <% end %>
+</div>

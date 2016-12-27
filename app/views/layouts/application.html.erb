@@ -2,33 +2,46 @@
 <html>
   <head>
     <title>Organiccosme</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
+    <meta charset="UTF-8" />
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track' => "reload" %>
+
   </head>
-  <body>
+
     <% flash.each do |key, value| %>
       <% key = "info" if key == "notice" %>
       <% key = "danger"  if key == "alert" %>
       <%= content_tag :div, value, class: "alert alert-#{key}" %>
     <% end %>
+
+  <body>
     <header class="header">
-      <div class="header__bar row">
         <h1 class="grid-6"><a href="/">Organics</a></h1>
-         <% if user_signed_in? %>
-        <div class="user_nav grid-6">
-          <a class="post" href="/tweets/new">投稿する</a>
-        </div>
-          <% else %>
-        <div class="grid-6">
-          <%= link_to "ログイン", new_user_session_path, class: 'post' %>
-          <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
-        </div>
-      <% end %>
+        <% if user_signed_in? %>
+          <div class="user_nav grid-6">
+            <a class="post" href="/tweets/new">投稿する</a>
+          </div>
+        <% else %>
+          <div class="grid-6">
+            <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+            <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+          </div>
+        <% end %>
+      </div>
+      <div class="nav">
+        <ul class="nl clearfix">
+           <li class="active"><a href="">オーガニックコスメのブランド</a></li>
+           <li><a href="">人気のオーガニックコスメ</a></li>
+           <li><a href="#">おすすめオーガニックコスメ</a></li>
+           <li><a href="#">オーガニックコスメのファンデーション</a></li>
+           <li><a href="#">オーガニックコスメの日焼け止め</a></li>
+           <li><a href="#">国産オーガニックコスメ</a></li>
+        </ul>
       </div>
     </header>
 
     <%= yield %>
-
+    <footer>
+      コピーライト
+    </footer>
   </body>
 </html>
