@@ -1,7 +1,13 @@
-<div class="contents">
+<div>
   <% @cosmes.each do |cosme| %>
-    <div class="contents contents_font">
-      <p><%= cosme.name %></p>
+    <% if user_signed_in? && current_user.id == cosme.user_id %>
+        <span>投稿者</span><%= cosme.user.nickname %>
+      <%= link_to '編集', "/cosmes/#{cosme.id}/edit", method: :get %>
+      <%= link_to '削除',"/cosmes/#{cosme.id}", method: :delete %>
+      <%= cosme.text %>
+      <%= image_tag cosme.image.url %>
     </div>
+    <% end %>
   <% end %>
+ <%= paginate(@cosmes) %>
 </div>

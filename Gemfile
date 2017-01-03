@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.6' #バージョン指定は適宜変更
-gem 'turbolinks'     #Railsのページ遷移高速化のためのgem
+# gem 'turbolinks'     #Railsのページ遷移高速化のためのgem
 gem 'sdoc', group: :doc # Rubyのソースを読み取り、ブラウザで閲覧しやすいドキュメントを生成してくれる
 gem 'haml-rails' #hamlが使えるように
 gem 'therubyracer'
@@ -84,6 +84,7 @@ group :development, :test do
 
   # Table/Scheme
   gem 'annotate' #schemaをモデルに書き出してくれる
+
 
   # デプロイ
   # gem 'capistrano' #自動デプロイ用 デプロイ時に使用する際はコメントアウトを外す

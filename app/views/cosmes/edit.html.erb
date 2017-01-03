@@ -1,0 +1,10 @@
+  <div class="contents row">
+    <%= form_tag("/coemes/#{@cosme.id}", method: :patch ) do %>
+      <h3>
+        編集する
+      </h3>
+          <%= file_field_tag :image %>
+      <textarea cols="30" name="text" placeholder="text" rows="10"><%= @cosme.text %></textarea>
+      <input type="submit" value="SENT">
+    <% end %>
+  </div>

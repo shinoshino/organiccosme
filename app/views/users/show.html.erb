@@ -1,0 +1,9 @@
+  <div class="contents row" >
+    <p><%= @nickname %>さんの投稿一覧</p>
+    <% @cosmes.each do |cosme| %>
+      <div class="content_post" style="background-image: url(<%= cosme.image %>);">
+        <%= simple_format(cosme.text) %>
+      </div>
+    <% end %>
+    <%= paginate(@cosmes) %>
+  </div>
