@@ -23,14 +23,14 @@
         </h1>
 
         <% if user_signed_in? %>
-          <ul class="user_nav grid-6 nl button" id="menu" style="float:left">
-            <li> <%= current_user.nickname %>
+           <ul class="user_nav grid-6 nl button" id="menu" style="float:left">
+             <li> <%= current_user.nickname %>
               <ul class="pull">
+                 <li>
+                  <a href="/users/<%= current_user.id %>">マイページ</a>
+                 </li>
                   <li>
-                    <a href="/users/<%= current_user.id %>">マイページ</a>
-                  </li>
-                  <li>
-                    <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
+                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'post' %>
                   </li>
                   <li>
                     <a class="post button" href="/cosmes/new">投稿する</a>
@@ -67,15 +67,13 @@
 
   </div>
 
-  <div class="contents clearfix">
       <%= yield %>
-    </div>
 
  </div>
 
 </div>
 
-    <footer>
-      copy right 2016
-    </footer>
+<footer>
+  copy right 2016
+</footer>
 </html>

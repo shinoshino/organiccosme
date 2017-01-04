@@ -30,8 +30,8 @@ gem 'dotenv-rails' #ドットファイルの定義用
 gem 'config' #定数定義用
 gem 'enum_help' #enumの日本語化
 
-# データベース
-gem 'mysql2', '~> 0.3.18' #バージョン指定は適宜変更
+# データベー
+gem 'mysql2', '0.3.18'
 
 # seed用
 gem 'seed-fu'
@@ -61,6 +61,15 @@ gem 'active_hash'
 
 # 管理画面
 gem 'adminlte2-rails'
+
+group :production, :staging do
+  gem 'rails_12factor'
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
 
 # サーバー
 # gem 'unicorn'  実際にunicornを使う際はコメントアウトを外す

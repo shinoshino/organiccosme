@@ -1,13 +1,18 @@
-<div>
-  <% @cosmes.each do |cosme| %>
-    <% if user_signed_in? && current_user.id == cosme.user_id %>
-        <span>投稿者</span><%= cosme.user.nickname %>
-      <%= link_to '編集', "/cosmes/#{cosme.id}/edit", method: :get %>
-      <%= link_to '削除',"/cosmes/#{cosme.id}", method: :delete %>
-      <%= cosme.text %>
-      <%= image_tag cosme.image.url %>
-    </div>
+<div class="contens clearfix">
+  <div class="content__post clearfix">
+    <% @cosmes.each do |cosme| %>
+      <div class="more_list">
+        <% if user_signed_in? && current_user.id == cosme.user_id %>
+            <span>投稿者</span><%= cosme.user.nickname %>
+          <ul class="more_list">
+          <li><%= link_to '編集', "/cosmes/#{cosme.id}/edit", method: :get, class: "color" %></li>
+            <li><%= link_to '削除',"/cosmes/#{cosme.id}", method: :delete, class: "color" %></li>
+            <li><%= cosme.text %></li>
+            <li><%= image_tag cosme.image.url %></li>
+          </ul>
+        </div>
+        <% end %>
+        </div>
     <% end %>
-  <% end %>
- <%= paginate(@cosmes) %>
-</div>
+    <%= paginate(@cosmes) %>
+  </div>
