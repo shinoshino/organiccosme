@@ -62,6 +62,8 @@ gem 'active_hash'
 # 管理画面
 gem 'adminlte2-rails'
 
+gem 'mechanize'
+
 group :production, :staging do
   gem 'rails_12factor'
 end

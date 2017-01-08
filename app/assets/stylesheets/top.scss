@@ -18,6 +18,12 @@ body {
   min-width: 960px;
 }
 
+@media (max-width: 640px) {
+  body, .wrapper {
+    min-width: initial;
+  }
+}
+
 
 header {
 background-color: white;
@@ -121,21 +127,6 @@ ul.pull li a{
 
 ul.pull li {
   // z-index: 100;
-}
-
-
-
-@media screen and (max-width: 640px){
-ul li {
-    width: 375px;
-}
-
-}
-
-@media screen and (max-width: 320px){
-ul li {
-    width: 50%;
-}
 }
 
 .navbar{
@@ -312,4 +303,13 @@ ol li{
   width: 600px;
   background-color: #008db7;
   box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.4);
+}
+
+@media screen and (max-width: 640px){
+  ul li {
+    width: 50%;
+  }
+  .morepage{
+   width: initial;
+  }
 }
