@@ -1,6 +1,5 @@
     require 'net/http'
     require 'uri'
-    require 'pry'
     require 'json'
 
 class Event < ActiveRecord::Base
