@@ -17,7 +17,7 @@ class CosmesController < ApplicationController
   end
 
   def create
-    Cosme.create(image: cosme_params[:image], text: cosme_params[:text], user_id: current_user.id)
+    Cosme.create(image: cosme_params[:image], text: cosme_params[:text], user_id: current_user.id, info: cosme_params[:info])
   end
 
   def edit
@@ -33,7 +33,7 @@ class CosmesController < ApplicationController
 
      private
     def cosme_params
-      params.permit(:image, :text)
+      params.permit(:image, :text, :info)
     end
 
     def move_to_index
